@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<link rel="stylesheet" type="text/css" href="mystyle.css">
 </head>
 <body>
 
+<input type="button" name="answer" value="Show Media" onclick="showDiv()" />
 
-
-<div class="menu" style="overflow:auto;"> 
+<div id="mediasidebar" style="display:none;" class="menu" style="overflow:auto;"> 
 	<ul> 
 		<div id="title"><h2><u>Media</u></h2></div>
 		<h2>(Pictures & Videos)</h2>
@@ -35,38 +35,11 @@
 		<li><a href="#">To Original Listing</a></li> 
 	</ul> 
 </div>
+<script>
+function showDiv() {
+   document.getElementById('mediasidebar').style.display = "block";
+}
+</script>
 </body>
 </html>
 
-
-<style type="text/css">
-html, body {
-  margin: 0px;
-  padding: 0px;
-  border: 0px;
-}
-td{
-text-align: center;}
-
-#title{position:relative;
-left:60px;}
-
-div.table{
-position:relative;
-left:-30px;}
-
-div.menu 
-{ 
-width:300px; 
-height:100%; 
-background-color:#F0F0E0; 
-position:fixed;
-right:0px;
-top:0px;
-} 
-
-.menu ul li 
-{ 
-margin-bottom:20px; 
-} 
-</style>
