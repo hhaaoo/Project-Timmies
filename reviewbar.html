@@ -3,8 +3,8 @@
 <head>
 </head>
 <body>
-
-<div class="menu" style="overflow:auto;"> 
+<input type="button" name="answer" value="Community Rating" onclick="showDiv()" />
+<div id="rating" style="display:none;" class="menu" style="overflow:auto;"> 
 	<ul> 
 		<h2>Community Rating</h2>
 		<img src="https://38.media.tumblr.com/d1d62a3120e1fe53a4b083cbc9f6625d/tumblr_nd3iqwc2o01tc704wo1_1280.jpg" alt="HTML5 Icon" width="200" height="128">
@@ -26,11 +26,17 @@
 			   </tr>
 			 </table>
 			</div>
-		<li><a href="#">To Original Listing</a></li> 
-		<li><a href="#">Back</a></li> 
 	</ul> 
-
+<center><input type="button" name="close" value="Close" onclick="closeDiv()" /><center>
 </div>
+<script>
+function showDiv() {
+   document.getElementById('rating').style.display = "block";
+}
+function closeDiv() {
+   document.getElementById('rating').style.display = "none";
+}
+</script>
 </body>
 </html>
 
