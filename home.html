@@ -21,6 +21,82 @@
 			
 	<div class="internalBG">
 		<div class="container">
+        
+        
+            <!--input type="button" name="answer" value="Show Media" onclick="showDiv()" /-->
+
+            <div id="mediasidebar" style="display:none;" class="menu" style="overflow:auto;"> 
+                <ul> 
+                    <div id="title"><h2><u>Media</u></h2></div>
+                    <h2>(Pictures & Videos)</h2>
+                    <br>
+                    <div class="table" style="height:600px;width:280px;overflow-y:scroll;">
+                         <table border="1">
+                           <tr>
+                            <td><p style="font-size: 100%;"><center>Video<center></p>
+                        <iframe width="252" height="206"
+                        src="http://www.youtube.com/embed/0GUwxJcnIgM">
+                        </iframe></td>
+                           </tr>
+                           <tr>
+                            <td><p style="font-size: 100%;">Image</p>
+                        <a href="http://upload.wikimedia.org/wikipedia/commons/f/f8/Margaret_Mitchell_House.jpg"><img src="http://upload.wikimedia.org/wikipedia/commons/f/f8/Margaret_Mitchell_House.jpg" alt="HTML5 Icon" width="252" height="206">
+                        </td></a>
+                           </tr>
+                           <tr>
+                            <td><p style="font-size: 100%;">Image</p>
+                        <a href="http://homedecorinterioridea.com/wp-content/uploads/2012/11/modern-black-and-white-living-room-ideas.jpg"><img src="http://homedecorinterioridea.com/wp-content/uploads/2012/11/modern-black-and-white-living-room-ideas.jpg" alt="HTML5 Icon" width="252" height="206"></td></a>
+                           </tr>
+                         </table>
+                    </div>
+                    <br>
+                </ul> 
+                <center><input type="button" name="close" value="Close" onclick="closeMedia()" /><center>
+            </div>
+            <script>
+            function showMedia() {
+               document.getElementById('mediasidebar').style.display = "block";
+            }
+            function closeMedia() {
+               document.getElementById('mediasidebar').style.display = "none";
+            }
+            </script>
+            
+            <!--input type="button" name="answer" value="Community Rating" onclick="showDiv()" /-->
+            <div id="rating" style="display:none;" class="menu" style="overflow:auto;"> 
+                <ul> 
+                    <h2>Community Rating</h2>
+                    <img src="https://38.media.tumblr.com/d1d62a3120e1fe53a4b083cbc9f6625d/tumblr_nd3iqwc2o01tc704wo1_1280.jpg" alt="HTML5 Icon" width="200" height="128">
+                    <br>
+                    <h3><u>Reviews</u></h3>
+                        <div class="table" style="height:600px;width:280px;overflow-y:scroll;">
+                         <table border="1">
+                           <tr>
+                            <td><p style="font-size: 100%;">Decent place, good fee, good area, and great food in the neighborhood.</p>
+                        <img src="http://upload.wikimedia.org/wikipedia/commons/4/4e/3_stars.svg" alt="HTML5 Icon" width="100" height="64"></td>
+                           </tr>
+                           <tr>
+                            <td><p style="font-size: 100%;">Decent place, good fee, good area, and great food in the neighborhood.</p>
+                        <img src="http://upload.wikimedia.org/wikipedia/commons/4/4e/3_stars.svg" alt="HTML5 Icon" width="100" height="64"></td>
+                           </tr>
+                           <tr>
+                            <td><p style="font-size: 100%;">Decent place, good fee, good area, and great food in the neighborhood.</p>
+                        <img src="http://upload.wikimedia.org/wikipedia/commons/4/4e/3_stars.svg" alt="HTML5 Icon" width="100" height="64"></td>
+                           </tr>
+                         </table>
+                        </div>
+                </ul> 
+            <center><input type="button" name="close" value="Close" onclick="closeReviews()" /><center>
+            </div>
+            <script>
+            function showReviews() {
+               document.getElementById('rating').style.display = "block";
+            }
+            function closeReviews() {
+               document.getElementById('rating').style.display = "none";
+            }
+            </script>
+
 			<div class="row">
                 <div class="col-md-12">
                     <div class="title">
@@ -28,9 +104,9 @@
                     </div>
                 </div>
             </div>
-				<div class="row">
+			<div class="row">
                     <div class="col-md-12 listing-Card">
-                            <p>Put Li's stuff here. (Maybe just a picture)</p>
+                            <p>Filters</p>
                     </div>						
                                     
                     <p> Last updated: </p> 
@@ -49,11 +125,11 @@
                                     </ul>
                                     <div class="row">
                                         <div class="col-md-3">
-                                        <img class="icon img-responsive" src="img/team/house.jpg" alt="pretend there is a house">
+                                        <img class="icon img-responsive" src="img/photos-icon.png" value="Show Media" onclick="showMedia()" height = "50" width = "50">
 								
                                         </div>
                                         <div class="col-md-3">
-                                        <img class="icon img-responsive" src="img/team/house.jpg" alt="pretend there is a house">
+                                        <img class="icon img-responsive" src="img/community-icon.jpg" value="Community Rating" onclick="showReviews()"height = "50" width = "50">
 								
                                         </div>
                                         <div class="col-md-3">
@@ -112,250 +188,7 @@
                             </div>                                
 							</div>
                         </div>
-                        <div class="listing-Card">
-							<div class="row">
-								<div class="col-md-4 ">
-									<img class="img-responsive img-rounded center-block" src="img/team/house.jpg" alt="pretend there is a house">
-								</div>
-								<div class="col-md-7 details">
-                                    <ul>
-                                        <li>House Description</li>
-                                        <li>Location</li>
-                                        <li>Price</li>
-                                        <li>Commute Time</li>
-                                        <li>Contact</li>
-                                    </ul>
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                        <img class="icon img-responsive" src="img/team/house.jpg" alt="pretend there is a house">
-								
-                                        </div>
-                                        <div class="col-md-3">
-                                        <img class="icon img-responsive" src="img/team/house.jpg" alt="pretend there is a house">
-								
-                                        </div>
-                                        <div class="col-md-3">
-                                        <img class="icon img-responsive" src="img/team/house.jpg" alt="pretend there is a house">
-								
-                                        </div>
-                                        <div class="col-md-3">
-                                        <img class="icon img-responsive" src="img/team/house.jpg" alt="pretend there is a house">
-								
-                                        </div>
-                                    </div>
-								</div>                            
-							</div>
-						</div>
                         
-                        <div class="listing-Card">
-							<div class="row">
-								<div class="col-md-4 ">
-									<img class="img-responsive img-rounded center-block" src="img/team/house.jpg" alt="pretend there is a house">
-								</div>
-								<div class="col-md-7 details">
-                                    <ul>
-                                        <li>House Description</li>
-                                        <li>Location</li>
-                                        <li>Price</li>
-                                        <li>Commute Time</li>
-                                        <li>Contact</li>
-                                    </ul>
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                        <img class="icon img-responsive" src="img/team/house.jpg" alt="pretend there is a house">
-								
-                                        </div>
-                                        <div class="col-md-3">
-                                        <img class="icon img-responsive" src="img/team/house.jpg" alt="pretend there is a house">
-								
-                                        </div>
-                                        <div class="col-md-3">
-                                        <img class="icon img-responsive" src="img/team/house.jpg" alt="pretend there is a house">
-								
-                                        </div>
-                                        <div class="col-md-3">
-                                        <img class="icon img-responsive" src="img/team/house.jpg" alt="pretend there is a house">
-								
-                                        </div>
-                                    </div>
-								</div>                            
-							</div>
-                        </div>
-                        
-                        <div class="listing-Card">
-							<div class="row">
-								<div class="col-md-4 ">
-									<img class="img-responsive img-rounded center-block" src="img/team/house.jpg" alt="pretend there is a house">
-								</div>
-								<div class="col-md-7 details">
-                                    <ul>
-                                        <li>House Description</li>
-                                        <li>Location</li>
-                                        <li>Price</li>
-                                        <li>Commute Time</li>
-                                        <li>Contact</li>
-                                    </ul>
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                        <img class="icon img-responsive" src="img/team/house.jpg" alt="pretend there is a house">
-								
-                                        </div>
-                                        <div class="col-md-3">
-                                        <img class="icon img-responsive" src="img/team/house.jpg" alt="pretend there is a house">
-								
-                                        </div>
-                                        <div class="col-md-3">
-                                        <img class="icon img-responsive" src="img/team/house.jpg" alt="pretend there is a house">
-								
-                                        </div>
-                                        <div class="col-md-3">
-                                        <img class="icon img-responsive" src="img/team/house.jpg" alt="pretend there is a house">
-								
-                                        </div>
-                                    </div>
-								</div>                            
-							</div>
-                        </div>
-                        
-                        <div class="listing-Card">
-							<div class="row">
-								<div class="col-md-4 ">
-									<img class="img-responsive img-rounded center-block" src="img/team/house.jpg" alt="pretend there is a house">
-								</div>
-								<div class="col-md-7 details">
-                                    <ul>
-                                        <li>House Description</li>
-                                        <li>Location</li>
-                                        <li>Price</li>
-                                        <li>Commute Time</li>
-                                        <li>Contact</li>
-                                    </ul>
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                        <img class="icon img-responsive" src="img/team/house.jpg" alt="pretend there is a house">
-								
-                                        </div>
-                                        <div class="col-md-3">
-                                        <img class="icon img-responsive" src="img/team/house.jpg" alt="pretend there is a house">
-								
-                                        </div>
-                                        <div class="col-md-3">
-                                        <img class="icon img-responsive" src="img/team/house.jpg" alt="pretend there is a house">
-								
-                                        </div>
-                                        <div class="col-md-3">
-                                        <img class="icon img-responsive" src="img/team/house.jpg" alt="pretend there is a house">
-								
-                                        </div>
-                                    </div>
-								</div>                            
-							</div>
-                        </div>
-                        
-                        <div class="listing-Card">
-							<div class="row">
-								<div class="col-md-4 ">
-									<img class="img-responsive img-rounded center-block" src="img/team/house.jpg" alt="pretend there is a house">
-								</div>
-								<div class="col-md-7 details">
-                                    <ul>
-                                        <li>House Description</li>
-                                        <li>Location</li>
-                                        <li>Price</li>
-                                        <li>Commute Time</li>
-                                        <li>Contact</li>
-                                    </ul>
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                        <img class="icon img-responsive" src="img/team/house.jpg" alt="pretend there is a house">
-								
-                                        </div>
-                                        <div class="col-md-3">
-                                        <img class="icon img-responsive" src="img/team/house.jpg" alt="pretend there is a house">
-								
-                                        </div>
-                                        <div class="col-md-3">
-                                        <img class="icon img-responsive" src="img/team/house.jpg" alt="pretend there is a house">
-								
-                                        </div>
-                                        <div class="col-md-3">
-                                        <img class="icon img-responsive" src="img/team/house.jpg" alt="pretend there is a house">
-								
-                                        </div>
-                                    </div>
-								</div>                            
-							</div>
-                        </div>
-                        
-                        <div class="listing-Card">
-							<div class="row">
-								<div class="col-md-4 ">
-									<img class="img-responsive img-rounded center-block" src="img/team/house.jpg" alt="pretend there is a house">
-								</div>
-								<div class="col-md-7 details">
-                                    <ul>
-                                        <li>House Description</li>
-                                        <li>Location</li>
-                                        <li>Price</li>
-                                        <li>Commute Time</li>
-                                        <li>Contact</li>
-                                    </ul>
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                        <img class="icon img-responsive" src="img/team/house.jpg" alt="pretend there is a house">
-								
-                                        </div>
-                                        <div class="col-md-3">
-                                        <img class="icon img-responsive" src="img/team/house.jpg" alt="pretend there is a house">
-								
-                                        </div>
-                                        <div class="col-md-3">
-                                        <img class="icon img-responsive" src="img/team/house.jpg" alt="pretend there is a house">
-								
-                                        </div>
-                                        <div class="col-md-3">
-                                        <img class="icon img-responsive" src="img/team/house.jpg" alt="pretend there is a house">
-								
-                                        </div>
-                                    </div>
-								</div>                            
-							</div>
-                        </div>
-                        
-                        <div class="listing-Card">
-							<div class="row">
-								<div class="col-md-4 ">
-									<img class="img-responsive img-rounded center-block" src="img/team/house.jpg" alt="pretend there is a house">
-								</div>
-								<div class="col-md-7 details">
-                                    <ul>
-                                        <li>House Description</li>
-                                        <li>Location</li>
-                                        <li>Price</li>
-                                        <li>Commute Time</li>
-                                        <li>Contact</li>
-                                    </ul>
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                        <img class="icon img-responsive" src="img/team/house.jpg" alt="pretend there is a house">
-								
-                                        </div>
-                                        <div class="col-md-3">
-                                        <img class="icon img-responsive" src="img/team/house.jpg" alt="pretend there is a house">
-								
-                                        </div>
-                                        <div class="col-md-3">
-                                        <img class="icon img-responsive" src="img/team/house.jpg" alt="pretend there is a house">
-								
-                                        </div>
-                                        <div class="col-md-3">
-                                        <img class="icon img-responsive" src="img/team/house.jpg" alt="pretend there is a house">
-								
-                                        </div>
-                                    </div>
-								</div>                            
-							</div>
-                        </div>
                     </div>
 			</div>	
 		</div>
