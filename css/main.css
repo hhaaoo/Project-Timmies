@@ -94,6 +94,8 @@ iframe {
     .listing-Card .icon{		
     margin: 0.5em;  
     cursor:pointer;
+    height:50px;
+    width:50px;
 	}
     
     .listing-Card li{
@@ -238,6 +240,6 @@ top:0px;
 margin-bottom:20px; 
 } 
 
-
-
-
+#mediasidebar{
+    z-index:5;
+}
