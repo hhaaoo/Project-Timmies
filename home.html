@@ -22,7 +22,6 @@
 	<div class="internalBG">
 		<div class="container">
         
-        
             <!--input type="button" name="answer" value="Show Media" onclick="showDiv()" /-->
 
             <div id="mediasidebar" style="display:none;" class="menu" style="overflow:auto;"> 
@@ -30,7 +29,7 @@
                     <div id="title"><h2><u>Media</u></h2></div>
                     <h2>(Pictures & Videos)</h2>
                     <br>
-                    <div class="table" style="height:600px;width:280px;overflow-y:scroll;">
+                    <div class="table" style="width:280px;overflow-y:scroll;">
                          <table border="1">
                            <tr>
                             <td><p style="font-size: 100%;"><center>Video<center></p>
@@ -105,16 +104,34 @@
                 </div>
             </div>
 			<div class="row">
-                    <div class="col-md-12 listing-Card">
-                            <p>Filters</p>
+                    <div class="col-md-12 listing-Card" id="filters">
+				<div class="title">
+                            <h2>Filters</h2>
+				</div>
+                        <div class="filters" id="addFilter">
+                          <a class="btn btn-primary" onclick="addFilter()">Add Filter</a>
+                        </div>
+<script>
+var nFilters = 1;
+function addFilter(){  
+  nFilters++;
+  var button = '<div class="control-label" id="addFilter"><a class="btn btn-primary" onclick="addFilter()">Add Filter</a></div>';
+  var removeButton = document.getElementById("addFilter");
+  removeButton.parentNode.removeChild(removeButton);
+  var div = document.getElementById("filters");
+  var newGroup = document.createElement('div');
+  newGroup.innerHTML = ['<div class="form-group"><div class="col-md-12"><input  type="text" class="form-control" id="filter-',nFilters,'" placeholder="ex) Price"></div>',button,'</div><div class="form-group"></div>'].join('');
+  div.insertBefore(newGroup, null);
+}
+</script>
                     </div>						
                                     
                     <p> Last updated: </p> 
-                    <div class = "ads" style="overflow-y:scroll;overflow-x:hidden; height: 300px;">
+                    <div class = "ads" style="overflow-y:scroll;overflow-x:hidden;">
 						<div class="listing-Card">
 							<div class="row">
 								<div class="col-md-4 ">
-									<img class="img-responsive img-rounded center-block" src="img/team/house.jpg" alt="pretend there is a house">
+									<img class="img-responsive img-rounded center-block" src="img/house.jpg">
 								</div>
 								<div class="col-md-8 details">
                                     <ul>
@@ -149,7 +166,7 @@
                                     <img src="img/email-icon.png" height = "50" width ="50"></img>
 
                                     <form id ="messagePopup" name="sendMessage">
-                                    <textArea name="message" placeholder="prompt" class = "message" rows="3" cols="50"></textArea>
+                                    <textArea name="message" placeholder="Prompt" class = "message" rows="3" cols="50"></textArea>
                                     <div></div>
                                     <a class = "btn btn-primary" href="#close"> Send Message </a>
                                     <a class = "close" href = "#close"></a>
@@ -159,7 +176,7 @@
                                     <img src="img/Skype-icon.png" height = "50" width ="50"></img>
 
                                     <form id ="messagePopup" name="sendMessage">
-                                    <textArea name="message" placeholder="prompt" class = "message" rows="3" cols="50"></textArea>
+                                    <textArea name="message" placeholder="Prompt" class = "message" rows="3" cols="50"></textArea>
                                     <div></div>
                                     <a class = "btn btn-primary" href="#close"> Send Message </a>
                                     <a class = "close" href = "#close"></a>
@@ -169,7 +186,7 @@
                                     <img src="img/Facebook-icon.png" height = "50" width ="50"></img>
 
                                     <form id ="messagePopup" name="sendMessage">
-                                    <textArea name="message" placeholder="prompt" class = "message" rows="3" cols="50"></textArea>
+                                    <textArea name="message" placeholder="Prompt" class = "message" rows="3" cols="50"></textArea>
                                     <div></div>
                                     <a class = "btn btn-primary" href="#close"> Send Message </a>
                                     <a class = "close" href = "#close"></a>
@@ -179,7 +196,7 @@
                                     <img src="img/Google-Plus-icon.png" height = "50" width ="50"></img>
 
                                     <form id ="messagePopup" name="sendMessage">
-                                    <textArea name="message" placeholder="oirjgroig" class = "message" rows="3" cols="50"></textArea>
+                                    <textArea name="message" placeholder="Prompt" class = "message" rows="3" cols="50"></textArea>
                                     <div></div>
                                     <a class = "btn btn-primary" href="#close"> Send Message </a>
                                     <a class = "close" href = "#close"></a>
@@ -188,6 +205,161 @@
                             </div>                                
 							</div>
                         </div>
+
+						<div class="listing-Card">
+							<div class="row">
+								<div class="col-md-4 ">
+									<img class="img-responsive img-rounded center-block" src="img/house.jpg">
+								</div>
+								<div class="col-md-8 details">
+                                    <ul>
+                                        <li>House Description</li>
+                                        <li>Location</li>
+                                        <li>Price</li>
+                                        <li>Commute Time</li>
+                                    </ul>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                        <img class="icon img-responsive" src="img/photos-icon.png" value="Show Media" onclick="showMedia()" >
+								
+                                        </div>
+                                        <div class="col-md-3">
+                                        <img class="icon img-responsive" src="img/community-icon.jpg" value="Community Rating" onclick="showReviews()">
+								
+                                        </div>
+                                        <div class="col-md-3">
+                                        <img class="icon img-responsive" src="img/safety.jpg">
+								
+                                        </div>
+                                        <div class="col-md-3">
+                                        <img class="icon img-responsive" src="img/walkscore.png">
+								
+                                        </div>
+                                    </div>
+								</div>  
+                            <a class="btn btn-primary" id ="messageButton"href="#messageForm" style="float:right; margin-right:10px;">Message</a>
+                            <a class= "overlay" id ="messageForm"></a>  
+                            <div class ="popup">
+                                <div class = "media-type">
+                                    <img src="img/email-icon.png" height = "50" width ="50"></img>
+
+                                    <form id ="messagePopup" name="sendMessage">
+                                    <textArea name="message" placeholder="Prompt" class = "message" rows="3" cols="50"></textArea>
+                                    <div></div>
+                                    <a class = "btn btn-primary" href="#close"> Send Message </a>
+                                    <a class = "close" href = "#close"></a>
+                                    </form>                    
+                                </div>
+                                <div class = "media-type">
+                                    <img src="img/Skype-icon.png" height = "50" width ="50"></img>
+
+                                    <form id ="messagePopup" name="sendMessage">
+                                    <textArea name="message" placeholder="Prompt" class = "message" rows="3" cols="50"></textArea>
+                                    <div></div>
+                                    <a class = "btn btn-primary" href="#close"> Send Message </a>
+                                    <a class = "close" href = "#close"></a>
+                                    </form>                    
+                                </div>
+                                <div class = "media-type">
+                                    <img src="img/Facebook-icon.png" height = "50" width ="50"></img>
+
+                                    <form id ="messagePopup" name="sendMessage">
+                                    <textArea name="message" placeholder="Prompt" class = "message" rows="3" cols="50"></textArea>
+                                    <div></div>
+                                    <a class = "btn btn-primary" href="#close"> Send Message </a>
+                                    <a class = "close" href = "#close"></a>
+                                    </form>                    
+                                </div>
+                                <div class = "media-type">
+                                    <img src="img/Google-Plus-icon.png" height = "50" width ="50"></img>
+
+                                    <form id ="messagePopup" name="sendMessage">
+                                    <textArea name="message" placeholder="Prompt" class = "message" rows="3" cols="50"></textArea>
+                                    <div></div>
+                                    <a class = "btn btn-primary" href="#close"> Send Message </a>
+                                    <a class = "close" href = "#close"></a>
+                                    </form>                    
+                                </div>
+                            </div>                                
+				</div>
+			</div>
+                        
+			<div class="listing-Card">
+							<div class="row">
+								<div class="col-md-4 ">
+									<img class="img-responsive img-rounded center-block" src="img/house.jpg">
+								</div>
+								<div class="col-md-8 details">
+                                    <ul>
+                                        <li>House Description</li>
+                                        <li>Location</li>
+                                        <li>Price</li>
+                                        <li>Commute Time</li>
+                                    </ul>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                        <img class="icon img-responsive" src="img/photos-icon.png" value="Show Media" onclick="showMedia()" >
+								
+                                        </div>
+                                        <div class="col-md-3">
+                                        <img class="icon img-responsive" src="img/community-icon.jpg" value="Community Rating" onclick="showReviews()">
+								
+                                        </div>
+                                        <div class="col-md-3">
+                                        <img class="icon img-responsive" src="img/safety.jpg">
+								
+                                        </div>
+                                        <div class="col-md-3">
+                                        <img class="icon img-responsive" src="img/walkscore.png">
+								
+                                        </div>
+                                    </div>
+								</div>  
+                            <a class="btn btn-primary" id ="messageButton"href="#messageForm" style="float:right; margin-right:10px;">Message</a>
+                            <a class= "overlay" id ="messageForm"></a>  
+                            <div class ="popup">
+                                <div class = "media-type">
+                                    <img src="img/email-icon.png" height = "50" width ="50"></img>
+
+                                    <form id ="messagePopup" name="sendMessage">
+                                    <textArea name="message" placeholder="Prompt" class = "message" rows="3" cols="50"></textArea>
+                                    <div></div>
+                                    <a class = "btn btn-primary" href="#close"> Send Message </a>
+                                    <a class = "close" href = "#close"></a>
+                                    </form>                    
+                                </div>
+                                <div class = "media-type">
+                                    <img src="img/Skype-icon.png" height = "50" width ="50"></img>
+
+                                    <form id ="messagePopup" name="sendMessage">
+                                    <textArea name="message" placeholder="Prompt" class = "message" rows="3" cols="50"></textArea>
+                                    <div></div>
+                                    <a class = "btn btn-primary" href="#close"> Send Message </a>
+                                    <a class = "close" href = "#close"></a>
+                                    </form>                    
+                                </div>
+                                <div class = "media-type">
+                                    <img src="img/Facebook-icon.png" height = "50" width ="50"></img>
+
+                                    <form id ="messagePopup" name="sendMessage">
+                                    <textArea name="message" placeholder="Prompt" class = "message" rows="3" cols="50"></textArea>
+                                    <div></div>
+                                    <a class = "btn btn-primary" href="#close"> Send Message </a>
+                                    <a class = "close" href = "#close"></a>
+                                    </form>                    
+                                </div>
+                                <div class = "media-type">
+                                    <img src="img/Google-Plus-icon.png" height = "50" width ="50"></img>
+
+                                    <form id ="messagePopup" name="sendMessage">
+                                    <textArea name="message" placeholder="Prompt" class = "message" rows="3" cols="50"></textArea>
+                                    <div></div>
+                                    <a class = "btn btn-primary" href="#close"> Send Message </a>
+                                    <a class = "close" href = "#close"></a>
+                                    </form>                    
+                                </div>
+                            </div>                                
+							
                         
                     </div>
 			</div>	
