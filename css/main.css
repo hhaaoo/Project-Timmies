@@ -1,62 +1,12 @@
-
-.navbar{
-  font-family: 'Source Sans Pro', sans-serif;
-}
-
-.navbar-default{
-  backgound: #5555dd;
-}
-
-iframe { 
-  width: 100%; 
-  margin: 0 0 20px 0; 
-}
-
-.button {
-  font-family: 'Source Sans Pro', sans-serif;
-  text-decoration: none;
-  font-size: 1.5em;
-  padding: 0.75em 1.5em 0.75em 1.5em;
-  display: inline-block;  
-  cursor: pointer;
-  border: 0;
-  border-radius: 5px;
-  background: #d52349;
-  color: #fff !important;
-  font-weight: 700;
-  outline: 0;
-  -moz-transition: background-color .25s ease-in-out;
-  -webkit-transition: background-color .25s ease-in-out;
-  -o-transition: background-color .25s ease-in-out;
-  -ms-transition: background-color .25s ease-in-out;
-  transition: background-color .25s ease-in-out;   
-}
-  .button:hover{
-    background: #e53359;
-    text-decoration: none;
-  }
-  .button:active{
-    background: #c51349;
-  }
-
-.internalBG{
-  background-image: url("../img/bg.png");  
-  border-top: 1px #a09d9e solid;
-  font-family: 'Source Sans Pro', sans-serif;  
-  padding: 30px 0 30px 0;    
-}
-
-	.internalBG h2{
-    font-size: 1.5em;
-    background: #fff;
+.title{
     position: relative;
-    top: -0.65em;
-    display: inline;
-    margin: 0;
-    padding: 0 1em 0 1em;    
+	text-align: center;
+	border-top: solid 1px #ccc;
+	top: 1em;
+    margin-bottom: 1em;
   }
-
-	.internalBG .listing-Card h2{
+  
+.listing-Card h2{
     font-size: 1.5em;
     background: #EEF;
     position: relative;
@@ -65,13 +15,16 @@ iframe {
     margin: 0;
     padding: 0 1em 0 1em;    
   }
-	.internalBG .title{
+  
+  .listing-Card h6{
+    text-align:center;
     position: relative;
-		text-align: center;
-		border-top: solid 1px #ccc;
-		top: 1em;
-    margin-bottom: 1em;
+    top: -0.65em;
+    display: inline;
+    margin: 0;
+    padding: 0 1em 0 1em;    
   }
+  
 .listing-Card{
 		background-color: #EEF;
   	border: 1px solid #000;    
@@ -100,7 +53,9 @@ iframe {
 	.listing-Card img{		
     margin-top: 0.5em;  
 	}
-    .listing-Card .icon{		
+    .listing-Card .icon{	
+	border-radius: 5px;
+	border: 1px solid #AAA;
     margin: 0.5em;  
     cursor:pointer;
     height:50px;
@@ -208,7 +163,7 @@ float:right;
     right: 0;
     text-align: center;
     text-decoration: none;
-    top: -15px;
+    top: 0px;
     width: 30px;
 
     -webkit-border-radius: 15px;
@@ -226,7 +181,12 @@ float:right;
 .close:hover {
     background-color: rgba(64, 128, 128, 0.8);
 }
-//Until here
+/*Until here. Code below is actually ours*/
+
+.profile{
+margin: 5px;
+border: 2px solid #000;
+}
 
 td{
 text-align: center;}
@@ -255,4 +215,13 @@ margin-bottom:20px;
 
 #mediasidebar{
     z-index:5;
+}
+#mediasidebar{
+    width:25%;
+}
+#rating{
+    z-index:5;
+}
+#rating{
+    width:25%;
 }
