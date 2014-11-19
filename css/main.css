@@ -1,3 +1,6 @@
+body{
+background: #d9d7d7;
+}
 .title{
     position: relative;
 	text-align: center;
@@ -26,7 +29,7 @@
   
 .listing-Card{
 	background-color: #EEF;
-  	border: 1px solid #000; 
+  	border: 1px solid #3b5998; 
   	padding: 10px;
 	margin-bottom: 2em;
     color: #000;    
@@ -54,7 +57,7 @@
 	}
     .listing-Card .icon{	
 	border-radius: 5px;
-	border: 1px solid #AAA;
+	border: 1px solid #3b5998;
     margin: 0.5em;  
     cursor:pointer;
     height:50px;
@@ -81,7 +84,7 @@ resize: none;
 }
 
 .ads{
-height:50vh;
+height:60vh;
 }
 
 #addFilter{
