@@ -222,4 +222,10 @@ margin-bottom: -5px;
 #walkscoresidebar img{
 height = 70px;
 }
-
+.styled-select {
+    width: 240px;
+    height: 34px;
+    overflow: hidden;
+    background: url(new_arrow.png) no-repeat right #ddd;
+    border: 1px solid #ccc;
+}

@@ -131,7 +131,7 @@
                       removeButton.parentNode.removeChild(removeButton);
                       var div = document.getElementById("filters");
                       var newGroup = document.createElement('div');
-                      newGroup.innerHTML = ['<div class="form-group"><div class="col-md-12"><input  type="text" class="form-control" id="filter-',nFilters,'" placeholder="ex) Price"></div>',button,'</div><div class="form-group"></div>'].join('');
+                      newGroup.innerHTML = ['<div class="form-group"><select class="styled-select"><option>Distance</option><option>Price</option><option>Basement?</option><option>Floor</option></select><select class="styled-select"><option><</option><option>></option><option>=</option><option>like</option></select>                      <div class="col-md-12"><input  type="text" class="form-control" id="filter-',nFilters,'" placeholder="ex) Price"></div>',button,'</div><div class="form-group"></div>'].join('');
                       div.insertBefore(newGroup, null);
                     }
                     </script>
