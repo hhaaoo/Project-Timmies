@@ -188,9 +188,21 @@ header nav span {
 .myButton:hover {
   background-color:#476e9e;
 }
-.myButton:active {
-  position:relative;
-  top:1px;
-}
 
+.option{
+  margin: 20px;
+  background: white;
+  width:300px;
+  height: 300px;
+  border-radius:10px;
+  cursor:pointer;
+  color:black;
+  font-family:arial;
+  font-size:24px;
+  padding:13px 49px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #283966;
+  margin-top: 20px;
+  left:20%;
+}
 
