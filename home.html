@@ -164,7 +164,8 @@
                       removeButton.parentNode.removeChild(removeButton);
                       var div = document.getElementById("filters");
                       var newGroup = document.createElement('div');
-                      newGroup.innerHTML = ['<div class="form-group"><select class="filter">' +
+                      newGroup.innerHTML = ['<div class="form-group"><select class="filter selectedindex=-1">' +
+                      '<option></option>' +
                       '<option class="numeric">Distance</option>' +
                       '<option class="numeric">Price</option>' +
                       '<option class="boolean">Basement?</option>' +
@@ -173,6 +174,7 @@
                       '<option class="boolean">Private?</option>' +
                       '<option class="text">Description</option></select>' +
                       '<select class="comparator_type">' +
+                      '<option></option>' +
                       '<option class="numeric"><</option>'+
                       '<option class="numeric">></option>'+
                       '<option class="numeric">=</option>'+
@@ -188,10 +190,8 @@
                     }
 
                     <!-- JQuery for only displaying relevant comparators for selected filter type-->
-                        $(function () {
-                            $('.filter_type').prop('selectedIndex', -1);
-                            $('.comparator_type').prop('selectedIndex', -1);
-                            $(".filter_type").on("change", (function () {
+                    $('body').on('click', 'div', function () {
+                            $(".filter").on("change", (function () {
                                 $(this).next(".comparator_type").children("option").css("display", "none");
                                 $(this).next(".comparator_type").prop('selectedIndex', -1);
                                 if ($(this).children("option:selected").hasClass("numeric")) {
