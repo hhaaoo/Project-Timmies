@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" ></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <!--<script src="js/bootstrap.min.js"></script>-->
+
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- CSS -->
@@ -13,6 +18,33 @@
   </head>
   <body>
     <!-- Page Body Here -->
+
+    <script>
+        function showMedia() {
+            document.getElementById('mediasidebar').style.display = "block";
+        }
+        function closeMedia() {
+            document.getElementById('mediasidebar').style.display = "none";
+        }
+        function showReviews() {
+            document.getElementById('rating').style.display = "block";
+        }
+        function closeReviews() {
+            document.getElementById('rating').style.display = "none";
+        }
+        function showSafety() {
+            document.getElementById('safetysidebar').style.display = "block";
+        }
+        function closeSafety() {
+            document.getElementById('safetysidebar').style.display = "none";
+        }
+        function showWalkscore() {
+            document.getElementById('walkscoresidebar').style.display = "block";
+        }
+        function closeWalkscore() {
+            document.getElementById('walkscoresidebar').style.display = "none";
+        }
+    </script>
 
 		<div class="container">
         
@@ -25,7 +57,7 @@
                     <div class="table">
                          <table border="1">
                            <tr>
-                            <td><p style="font-size: 100%;"><center>Video<center></p>
+                            <td><p style="font-size: 100%;"><center>Video</center></p>
                         <iframe 
                         src="http://www.youtube.com/embed/0GUwxJcnIgM">
                         </iframe></td>
@@ -33,11 +65,11 @@
                            <tr>
                             <td><p style="font-size: 100%;">Image</p>
                         <a href="http://upload.wikimedia.org/wikipedia/commons/f/f8/Margaret_Mitchell_House.jpg"><img src="http://upload.wikimedia.org/wikipedia/commons/f/f8/Margaret_Mitchell_House.jpg" alt="HTML5 Icon" width="252" height="206">
-                        </td></a>
+                        </a></td>
                            </tr>
                            <tr>
                             <td><p style="font-size: 100%;">Image</p>
-                        <a href="http://homedecorinterioridea.com/wp-content/uploads/2012/11/modern-black-and-white-living-room-ideas.jpg"><img src="http://homedecorinterioridea.com/wp-content/uploads/2012/11/modern-black-and-white-living-room-ideas.jpg" alt="HTML5 Icon" width="252" height="206"></td></a>
+                        <a href="http://homedecorinterioridea.com/wp-content/uploads/2012/11/modern-black-and-white-living-room-ideas.jpg"><img src="http://homedecorinterioridea.com/wp-content/uploads/2012/11/modern-black-and-white-living-room-ideas.jpg" alt="HTML5 Icon" width="252" height="206"></a></td>
                            </tr>
                          </table>
                     </div>
@@ -90,7 +122,7 @@
                 <li> <p><b> 0-24: Car Dependent</b></p> 
                 <p> Almost all errands require a car</p></li>
                 </ul>
-                <img src = "img/walkscore-graph.png" height="275px"> </img>
+                <img src = "img/walkscore-graph.png" height="275px"> 
                 </div>    
                 <a class = "close" onclick="closeWalkscore()"></a>
             </div>
@@ -105,7 +137,7 @@
                 </ul>
                 
                 <div class="title"><h2><u>Crime Rates (frequency)</u></h2></div>
-                <img src = "img/safety-chart.png" height="275px"> </img>
+                <img src = "img/safety-chart.png" height="275px"> 
                 </div>    
                 <a class = "close" onclick="closeWalkscore()"></a>
             </div>
@@ -122,7 +154,8 @@
                         </div>
                         
                     <script>
-                    <!-- Dynamically Add Filters-->
+
+                    /*Dynamically Add Filters*/
                     var nFilters = 1;
                     function addFilter(){  
                       nFilters++;
@@ -131,12 +164,49 @@
                       removeButton.parentNode.removeChild(removeButton);
                       var div = document.getElementById("filters");
                       var newGroup = document.createElement('div');
-                      newGroup.innerHTML = ['<div class="form-group"><select class="styled-select"><option>Distance</option><option>Price</option><option>Basement?</option><option>Floor</option></select><select class="styled-select"><option><</option><option>></option><option>=</option><option>like</option></select>                      <div class="col-md-12"><input  type="text" class="form-control" id="filter-',nFilters,'" placeholder="ex) Price < $1000"></div>',button,'</div><div class="form-group"></div>'].join('');
+                      newGroup.innerHTML = ['<div class="form-group"><select class="filter">' +
+                      '<option class="numeric">Distance</option>' +
+                      '<option class="numeric">Price</option>' +
+                      '<option class="boolean">Basement?</option>' +
+                      '<option class="numeric">Floor</option>' +
+                      '<option class="numeric">Lease Length</option>' +
+                      '<option class="boolean">Private?</option>' +
+                      '<option class="text">Description</option></select>' +
+                      '<select class="comparator_type">' +
+                      '<option class="numeric"><</option>'+
+                      '<option class="numeric">></option>'+
+                      '<option class="numeric">=</option>'+
+                      '<option class="numeric">>=</option>'+
+                      '<option class="numeric"><=</option>'+
+                      '<option class="text">like</option>' +
+                      '<option class="boolean">Yes</option>' +
+                      '<option class="boolean">No</option>' +
+                      '<option class="text">contains</option>' +
+                      '</select>' +
+                      '<div class="col-md-12"><input  type="text" class="form-control" id="filter-',nFilters,'" placeholder="ex) Price < $1000"></div>',button,'</div><div class="form-group"></div>'].join('');
                       div.insertBefore(newGroup, null);
                     }
+
+                    <!-- JQuery for only displaying relevant comparators for selected filter type-->
+                        $(function () {
+                            $('.filter_type').prop('selectedIndex', -1);
+                            $('.comparator_type').prop('selectedIndex', -1);
+                            $(".filter_type").on("change", (function () {
+                                $(this).next(".comparator_type").children("option").css("display", "none");
+                                $(this).next(".comparator_type").prop('selectedIndex', -1);
+                                if ($(this).children("option:selected").hasClass("numeric")) {
+                                    $(this).next(".comparator_type").children("option.numeric").css("display", "inline");
+                                }
+                                if ($(this).children("option:selected").hasClass("boolean")) {
+                                    $(this).next(".comparator_type").children("option.boolean").css("display", "inline");
+                                }
+                                if ($(this).children("option:selected").hasClass("text")) {
+                                    $(this).next(".comparator_type").children("option.text").css("display", "inline");
+                                }
+                            }));
+                        });
                     </script>
-                    
-                    </div>	
+                    </div>
             </div>
                                     
                     <p> Last updated: 11-19-2014 20:00:00</p> 
@@ -182,19 +252,19 @@
                             <a class= "overlay" id ="messageForm"></a>  
                             <div class ="popup">
                                 <div class = "media-type">
-                                    <img src="img/email-icon.png" height = "50" width ="50" href="#textForm"></img>
+                                    <img src="img/email-icon.png" height = "50" width ="50" href="#textForm">
                                     <a class = "btn btn-primary" href="#textForm"> Send Email to "person" </a>
                                     <div></div>
-                                    <img src="img/Skype-icon.png" height = "50" width ="50" href="#textForm"></img>
-                                    <img class = "profile" src="img/profile.png" height = "50" width ="50" href="#"></img>
+                                    <img src="img/Skype-icon.png" height = "50" width ="50" href="#textForm">
+                                    <img class = "profile" src="img/profile.png" height = "50" width ="50" href="#">
                                     <a class = "btn btn-primary" href="#textForm"> Send Skype Message to "person" </a>
                                     <div></div>
-                                    <img src="img/Facebook-icon.png" height = "50" width ="50" href="#textForm"></img>
-                                    <img class = "profile" src="img/profile.png" height = "50" width ="50" href="#"></img>
+                                    <img src="img/Facebook-icon.png" height = "50" width ="50" href="#textForm">
+                                    <img class = "profile" src="img/profile.png" height = "50" width ="50" href="#">
                                     <a class = "btn btn-primary" href="#textForm"> Send Facebook Message to "person" </a>
                                     <div></div>
-                                    <img src="img/Google-Plus-icon.png" height = "50" width ="50" href="#textForm"></img>
-                                    <img class = "profile" src="img/profile.png" height = "50" width ="50" href="#"></img>
+                                    <img src="img/Google-Plus-icon.png" height = "50" width ="50" href="#textForm">
+                                    <img class = "profile" src="img/profile.png" height = "50" width ="50" href="#">
                                     <a class = "btn btn-primary" href="#textForm"> Send Gmail to "person" </a>
 
                                     <a class = "close" href = "#close"></a>
@@ -254,19 +324,19 @@
                             <a class= "overlay" id ="messageForm"></a>  
                             <div class ="popup">
                                 <div class = "media-type">
-                                    <img src="img/email-icon.png" height = "50" width ="50" href="#textForm"></img>
+                                    <img src="img/email-icon.png" height = "50" width ="50" href="#textForm">
                                     <a class = "btn btn-primary" href="#textForm"> Send Email to "person" </a>
                                     <div></div>
-                                    <img src="img/Skype-icon.png" height = "50" width ="50" href="#textForm"></img>
-                                    <img class = "profile" src="img/profile.png" height = "50" width ="50" href="#"></img>
+                                    <img src="img/Skype-icon.png" height = "50" width ="50" href="#textForm">
+                                    <img class = "profile" src="img/profile.png" height = "50" width ="50" href="#">
                                     <a class = "btn btn-primary" href="#textForm"> Send Skype Message to "person" </a>
                                     <div></div>
-                                    <img src="img/Facebook-icon.png" height = "50" width ="50" href="#textForm"></img>
-                                    <img class = "profile" src="img/profile.png" height = "50" width ="50" href="#"></img>
+                                    <img src="img/Facebook-icon.png" height = "50" width ="50" href="#textForm">
+                                    <img class = "profile" src="img/profile.png" height = "50" width ="50" href="#">
                                     <a class = "btn btn-primary" href="#textForm"> Send Facebook Message to "person" </a>
                                     <div></div>
-                                    <img src="img/Google-Plus-icon.png" height = "50" width ="50" href="#textForm"></img>
-                                    <img class = "profile" src="img/profile.png" height = "50" width ="50" href="#"></img>
+                                    <img src="img/Google-Plus-icon.png" height = "50" width ="50" href="#textForm">
+                                    <img class = "profile" src="img/profile.png" height = "50" width ="50" href="#">
                                     <a class = "btn btn-primary" href="#textForm"> Send Gmail to "person" </a>
 
                                     <a class = "close" href = "#close"></a>
@@ -326,19 +396,19 @@
                             <a class= "overlay" id ="messageForm"></a>  
                             <div class ="popup">
                                 <div class = "media-type">
-                                    <img src="img/email-icon.png" height = "50" width ="50" href="#textForm"></img>
+                                    <img src="img/email-icon.png" height = "50" width ="50" href="#textForm">
                                     <a class = "btn btn-primary" href="#textForm"> Send Email to "person" </a>
                                     <div></div>
-                                    <img src="img/Skype-icon.png" height = "50" width ="50" href="#textForm"></img>
-                                    <img class = "profile" src="img/profile.png" height = "50" width ="50" href="#"></img>
+                                    <img src="img/Skype-icon.png" height = "50" width ="50" href="#textForm">
+                                    <img class = "profile" src="img/profile.png" height = "50" width ="50" href="#">
                                     <a class = "btn btn-primary" href="#textForm"> Send Skype Message to "person" </a>
                                     <div></div>
-                                    <img src="img/Facebook-icon.png" height = "50" width ="50" href="#textForm"></img>
-                                    <img class = "profile" src="img/profile.png" height = "50" width ="50" href="#"></img>
+                                    <img src="img/Facebook-icon.png" height = "50" width ="50" href="#textForm">
+                                    <img class = "profile" src="img/profile.png" height = "50" width ="50" href="#">
                                     <a class = "btn btn-primary" href="#textForm"> Send Facebook Message to "person" </a>
                                     <div></div>
-                                    <img src="img/Google-Plus-icon.png" height = "50" width ="50" href="#textForm"></img>
-                                    <img class = "profile" src="img/profile.png" height = "50" width ="50" href="#"></img>
+                                    <img src="img/Google-Plus-icon.png" height = "50" width ="50" href="#textForm">
+                                    <img class = "profile" src="img/profile.png" height = "50" width ="50" href="#">
                                     <a class = "btn btn-primary" href="#textForm"> Send Gmail to "person" </a>
 
                                     <a class = "close" href = "#close"></a>
@@ -398,19 +468,19 @@
                             <a class= "overlay" id ="messageForm"></a>  
                             <div class ="popup">
                                 <div class = "media-type">
-                                    <img src="img/email-icon.png" height = "50" width ="50" href="#textForm"></img>
+                                    <img src="img/email-icon.png" height = "50" width ="50" href="#textForm">
                                     <a class = "btn btn-primary" href="#textForm"> Send Email to "person" </a>
                                     <div></div>
-                                    <img src="img/Skype-icon.png" height = "50" width ="50" href="#textForm"></img>
-                                    <img class = "profile" src="img/profile.png" height = "50" width ="50" href="#"></img>
+                                    <img src="img/Skype-icon.png" height = "50" width ="50" href="#textForm">
+                                    <img class = "profile" src="img/profile.png" height = "50" width ="50" href="#">
                                     <a class = "btn btn-primary" href="#textForm"> Send Skype Message to "person" </a>
                                     <div></div>
-                                    <img src="img/Facebook-icon.png" height = "50" width ="50" href="#textForm"></img>
-                                    <img class = "profile" src="img/profile.png" height = "50" width ="50" href="#"></img>
+                                    <img src="img/Facebook-icon.png" height = "50" width ="50" href="#textForm">
+                                    <img class = "profile" src="img/profile.png" height = "50" width ="50" href="#">
                                     <a class = "btn btn-primary" href="#textForm"> Send Facebook Message to "person" </a>
                                     <div></div>
-                                    <img src="img/Google-Plus-icon.png" height = "50" width ="50" href="#textForm"></img>
-                                    <img class = "profile" src="img/profile.png" height = "50" width ="50" href="#"></img>
+                                    <img src="img/Google-Plus-icon.png" height = "50" width ="50" href="#textForm">
+                                    <img class = "profile" src="img/profile.png" height = "50" width ="50" href="#">
                                     <a class = "btn btn-primary" href="#textForm"> Send Gmail to "person" </a>
 
                                     <a class = "close" href = "#close"></a>
@@ -470,19 +540,19 @@
                             <a class= "overlay" id ="messageForm"></a>  
                             <div class ="popup">
                                 <div class = "media-type">
-                                    <img src="img/email-icon.png" height = "50" width ="50" href="#textForm"></img>
+                                    <img src="img/email-icon.png" height = "50" width ="50" href="#textForm">
                                     <a class = "btn btn-primary" href="#textForm"> Send Email to "person" </a>
                                     <div></div>
-                                    <img src="img/Skype-icon.png" height = "50" width ="50" href="#textForm"></img>
-                                    <img class = "profile" src="img/profile.png" height = "50" width ="50" href="#"></img>
+                                    <img src="img/Skype-icon.png" height = "50" width ="50" href="#textForm">
+                                    <img class = "profile" src="img/profile.png" height = "50" width ="50" href="#">
                                     <a class = "btn btn-primary" href="#textForm"> Send Skype Message to "person" </a>
                                     <div></div>
-                                    <img src="img/Facebook-icon.png" height = "50" width ="50" href="#textForm"></img>
-                                    <img class = "profile" src="img/profile.png" height = "50" width ="50" href="#"></img>
+                                    <img src="img/Facebook-icon.png" height = "50" width ="50" href="#textForm">
+                                    <img class = "profile" src="img/profile.png" height = "50" width ="50" href="#">
                                     <a class = "btn btn-primary" href="#textForm"> Send Facebook Message to "person" </a>
                                     <div></div>
-                                    <img src="img/Google-Plus-icon.png" height = "50" width ="50" href="#textForm"></img>
-                                    <img class = "profile" src="img/profile.png" height = "50" width ="50" href="#"></img>
+                                    <img src="img/Google-Plus-icon.png" height = "50" width ="50" href="#textForm">
+                                    <img class = "profile" src="img/profile.png" height = "50" width ="50" href="#">
                                     <a class = "btn btn-primary" href="#textForm"> Send Gmail to "person" </a>
 
                                     <a class = "close" href = "#close"></a>
@@ -505,37 +575,6 @@
 			</div>
     </div>
     <!-- End of the page -->
-    
-        <script>
-            function showMedia() {
-               document.getElementById('mediasidebar').style.display = "block";
-            }
-            function closeMedia() {
-               document.getElementById('mediasidebar').style.display = "none";
-            }
-            function showReviews() {
-               document.getElementById('rating').style.display = "block";
-            }
-            function closeReviews() {
-               document.getElementById('rating').style.display = "none";
-            }
-            function showSafety() {
-               document.getElementById('safetysidebar').style.display = "block";
-            }
-            function closeSafety() {
-               document.getElementById('safetysidebar').style.display = "none";
-            }
-            function showWalkscore() {
-               document.getElementById('walkscoresidebar').style.display = "block";
-            }
-            function closeWalkscore() {
-               document.getElementById('walkscoresidebar').style.display = "none";
-            }
-        </script>
-      
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery-1.11.1.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+
   </body>
 </html>
