@@ -205,7 +205,6 @@ background-color:#F0F0E0;
 position:fixed;
 right:0px;
 top:0px;    
-z-index:5;
 border: 1px solid #AAA;
 } 
 
@@ -220,7 +219,7 @@ margin-bottom: -5px;
 }
 
 #walkscoresidebar img{
-height:70px;
+height:120px;
 }
 .filter, .comparator_type {
     width: 240px;
