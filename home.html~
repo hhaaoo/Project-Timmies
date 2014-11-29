@@ -248,7 +248,7 @@
                                     </div>
 								</div>  
                             <span style="margin-left: 10px">Original Ad: </span><a>originaladlink.com/31421/421/4/213/4/31/43/25</a>
-                            <a class="btn btn-primary" id ="messageButton"href="#messageForm" >Message</a>
+                            <a class="btn btn-primary" id ="messageButton"href="#messageForm">Message</a>
                             
                         </div>
                     </div>  

@@ -30,7 +30,7 @@
 // Popup window code
 function newPopup(url) {
 	popupWindow = window.open(
-		url,'popUpWindow','height=auto,width=auto,left=10,top=10,resizable=no,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no,status=yes')
+		url,'popUpWindow','height=100%,width=100%,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no,status=yes')
 }
 </script>
 <a href="JavaScript:newPopup('http://www.quackit.com/html/html_help.cfm');">Open a popup window</a>
