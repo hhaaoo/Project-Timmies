@@ -213,6 +213,10 @@ border: 1px solid #AAA;
 margin-bottom:20px; 
 }
 
+#walkscoresidebar{
+    z-index:10;
+}
+
 #walkscoresidebar p{
 margin-top:-5px;
 margin-bottom: -5px;
@@ -283,3 +287,6 @@ div ul li { line-height:30px; }
     transform: scale(1.1);
 }
 
+.row{
+    z-index: 0;
+}
