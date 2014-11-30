@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Top Bar</title>
   <link rel="stylesheet" href="css/style.css">
+      <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
   <header>
@@ -23,11 +24,54 @@
   <a>Location</a><br>
   <a>Price</a><br>
   <a>Contact Info</a>
-
-  <center><a href="step2.html" class="myButton">20 mins</a></center>
-
-
-
+<div>
+  <center><a href="step2.html" class="myButton">20 mins</a>
   
+                                        <figure>
+                                        <a href="JavaScript:showMedia();"><img class="icon img-responsive" src="img/photos-icon.png" value="Show Media" ></img></a>
+                                        <figcaption>Media</figcaption>
+                                        </figure>
+                                        
+                                       <figure>
+                                        <a href="JavaScript:showReviews();"><img class="icon img-responsive" src="img/community-icon.jpg" value="Community Rating" onclick="showReviews();  closeMedia(); closeWalkscore();closeSafety(); "></a>
+                                        <figcaption>Community</figcaption>
+                                        </figure>
+
+
+                                        <figure>
+                                        <a href="JavaScript:showSafety();"><img class="icon img-responsive" src="img/safety.jpg" onclick="showSafety();  closeMedia(); closeReviews(); closeWalkscore();"></a>
+                                        <figcaption>Safety</figcaption>
+                                        </figure>
+
+
+                                        <figure>
+                                        <a href="JavaScript:showWalkscore();"><img class="icon img-responsive" src="img/walkscore.png" onclick="showWalkscore();  closeMedia(); closeSafety(); closeReviews();"></a>
+                                        <figcaption>Walkscore</figcaption>
+                                        </figure>
+</center>
+  </div>
+  
+      <script type="text/javascript">
+        function showMedia() {
+            window.open('mediasidebar.html','media','height='+(screen.height-100)+',width=300,left='+(screen.width-300)+',top=0,resizable=no,scrollbars=no,toolbar=no,menubar=no,location=no,directories=no,status=yes')
+
+        }
+        function showReviews() {
+            window.open(
+		'ratingsidebar.html','reviews','height='+(screen.height-100)+',width=300,left='+(screen.width-300)+',top=0,resizable=no,scrollbars=no,toolbar=no,menubar=no,location=no,directories=no,status=yes')
+
+        }
+        function showSafety() {
+            window.open(
+		'safetysidebar.html','safety','height='+(screen.height-100)+',width=300,left='+(screen.width-300)+',top=0,resizable=no,scrollbars=no,toolbar=no,menubar=no,location=no,directories=no,status=yes')
+
+        }
+        function showWalkscore() {
+            window.open(
+		'walkscoresidebar.html','walkscore','height='+(screen.height-100)+',width=300,left='+(screen.width-300)+',top=0,resizable=no,scrollbars=no,toolbar=no,menubar=no,location=no,directories=no,status=yes')
+
+        }
+
+    </script>
 </body>
 </html>
