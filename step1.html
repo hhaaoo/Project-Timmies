@@ -5,27 +5,30 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Top Bar</title>
   <link rel="stylesheet" href="css/style.css">
-      <link href="css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 <body>
+  <nav id="navi" width="600px">
   <header>
     <div class="container">
-      <h1><a href="index.html">Project Timmies</a></h1>
+
       <nav>
         <ul>
-          <li><a href="index.html" class="icon tasks">Listing</a></li>
-          <li><a href="index.html" class="icon settings">.</a></li>
+		<li><h1><a href="index.html">Project Timmies</a></h1></li>
+          <li><a href="JavaScript:newPopup('home.html');" class="icon tasks">Listing</a></li>
+          <li><a href="settings.html" class="icon settings">.</a></li>
 
         </ul>
       </nav>
     </div>
   </header>
-  
+
   <div style="margin = 2px">
   <h4>Location: 96 St. Patrick St.</h4><br>
   <h4>Price: $1750.00</h4><br>
   <h4>Posted: November 30 2014</h4>
   </div>
+
 <div>
   <center><a href="step2.html" class="myButton">20 mins</a>
   
@@ -73,7 +76,10 @@
 		'walkscoresidebar.html','walkscore','height='+(screen.height-100)+',width=300,left='+(screen.width-300)+',top=0,resizable=no,scrollbars=no,toolbar=no,menubar=no,location=no,directories=no,status=yes')
 
         }
-
+		function newPopup(url) {
+			window.open(
+		url,'popUpWindow','height=600,width='+(screen.width/2 + 200)+',left='+(screen.width/4)+',top=0,resizable=no,scrollbars=no,toolbar=no,menubar=no,location=no,directories=no,status=yes')
+}
     </script>
 </body>
 </html>
