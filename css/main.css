@@ -215,8 +215,6 @@ z-index:12;}
 margin-bottom:20px; 
 }
 
-<<<<<<< HEAD
-=======
 #walkscoresidebar{
     z-index:10;
 }
@@ -224,10 +222,6 @@ margin-bottom:20px;
 #walkscoresidebar p{
 margin-top:-5px;
 margin-bottom: -5px;
-}
-
-#walkscoresidebar img{
-height:120px;
 }
 
 .filter, .comparator_type {
