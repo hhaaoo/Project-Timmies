@@ -7,8 +7,6 @@
 
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" ></script>
-      <!-- Include all compiled plugins (below), or include individual files as needed -->
-      <!--<script src="js/bootstrap.min.js"></script>-->
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -19,128 +17,21 @@
   <body>
     <!-- Page Body Here -->
 
-    <script>
-        function showMedia() {
-            document.getElementById('mediasidebar').style.display = "block";
-        }
-        function closeMedia() {
-            document.getElementById('mediasidebar').style.display = "none";
-        }
-        function showReviews() {
-            document.getElementById('rating').style.display = "block";
-        }
-        function closeReviews() {
-            document.getElementById('rating').style.display = "none";
-        }
-        function showSafety() {
-            document.getElementById('safetysidebar').style.display = "block";
-        }
-        function closeSafety() {
-            document.getElementById('safetysidebar').style.display = "none";
-        }
-        function showWalkscore() {
-            document.getElementById('walkscoresidebar').style.display = "block";
-        }
-        function closeWalkscore() {
-            document.getElementById('walkscoresidebar').style.display = "none";
-        }
-    </script>
+
 
 		<div class="container">
         
             <!--input type="button" name="answer" value="Show Media" onclick="showDiv()" /-->
 
-            <div id="mediasidebar" style="display:none;" class="menu" style="overflow-y:scroll"> 
-                <ul> 
-                    <div class="title"><h2><u>Media</u></h2></div>
-                    <br>
-                    <div class="table">
-                         <table border="1">
-                           <tr>
-                            <td><p style="font-size: 100%;"><center>Video</center></p>
-                        <iframe 
-                        src="http://www.youtube.com/embed/0GUwxJcnIgM">
-                        </iframe></td>
-                           </tr>
-                           <tr>
-                            <td><p style="font-size: 100%;">Image</p>
-                        <a href="http://upload.wikimedia.org/wikipedia/commons/f/f8/Margaret_Mitchell_House.jpg"><img src="http://upload.wikimedia.org/wikipedia/commons/f/f8/Margaret_Mitchell_House.jpg" alt="HTML5 Icon" width="252" height="206">
-                        </a></td>
-                           </tr>
-                           <tr>
-                            <td><p style="font-size: 100%;">Image</p>
-                        <a href="http://homedecorinterioridea.com/wp-content/uploads/2012/11/modern-black-and-white-living-room-ideas.jpg"><img src="http://homedecorinterioridea.com/wp-content/uploads/2012/11/modern-black-and-white-living-room-ideas.jpg" alt="HTML5 Icon" width="252" height="206"></a></td>
-                           </tr>
-                         </table>
-                    </div>
-                    <br>
-                </ul> 
-                <a class = "close" onclick="closeMedia()"></a>
-            </div>
+
             
             
             <!--input type="button" name="answer" value="Community Rating" onclick="showDiv()" /-->
-            <div id="rating" style="display:none;" class="menu" style="overflow:scroll;"> 
-                <ul> 
-                    <div class="title"><h2><u>Community</u></h2></div>
-                    <img src="https://38.media.tumblr.com/d1d62a3120e1fe53a4b083cbc9f6625d/tumblr_nd3iqwc2o01tc704wo1_1280.jpg" alt="HTML5 Icon" width="200" height="128">
-                    <br>
-                    <h3><u>Reviews</u></h3>
-                        <div class="table" style="overflow-y:scroll;">
-                         <table border="1">
-                           <tr>
-                            <td><p style="font-size: 100%;">Decent place, good fee, good area, and great food in the neighborhood.</p>
-                        <img src="http://upload.wikimedia.org/wikipedia/commons/4/4e/3_stars.svg" alt="HTML5 Icon" width="100" height="64"></td>
-                           </tr>
-                           <tr>
-                            <td><p style="font-size: 100%;">Decent place, good fee, good area, and great food in the neighborhood.</p>
-                        <img src="http://upload.wikimedia.org/wikipedia/commons/4/4e/3_stars.svg" alt="HTML5 Icon" width="100" height="64"></td>
-                           </tr>
-                           <tr>
-                            <td><p style="font-size: 100%;">Decent place, good fee, good area, and great food in the neighborhood.</p>
-                        <img src="http://upload.wikimedia.org/wikipedia/commons/4/4e/3_stars.svg" alt="HTML5 Icon" width="100" height="64"></td>
-                           </tr>
-                         </table>
-                        </div>
-                </ul> 
-                <a class = "close" onclick="closeReviews()"></a>
-            </div>
-
-             <div id="walkscoresidebar" style="display:none;" class="menu" style="overflow-y:scroll"> 
-                <div class="title"><h2><u>Walk Score</u></h2></div>
-                <div>
-                <p> Walk Score measures the walkability of any address based on the distances to nearby places and pedestrian friendliness </P>
-                <ul>
-                <li> <p> <b>90-100: Walker's paradise</b></p> 
-                <p> Daily errands do not require a car</p></li>
-                <li> <p> <b>70-89: Very Walkable</b></p> 
-                <p> Most errands can be accomplished on foor</p></li>
-                <li> <p><b> 50-69: Somewhat Walkable</b></p> 
-                <p> Most errands require a car</p></li>
-                <li> <p> <b>25-49: Car Dependent</b></p> 
-                <p> Most errands require a car</p></li>
-                <li> <p><b> 0-24: Car Dependent</b></p> 
-                <p> Almost all errands require a car</p></li>
-                </ul>
-                <img src = "img/walkscore-graph.png"> 
-                </div>    
-                <a class = "close" onclick="closeWalkscore()"></a>
-            </div>
             
-            <div id="safetysidebar" style="display:none;" class="menu" style="overflow-y:scroll"> 
-                <div class="title"><h2><u>Safety Services</u></h2></div>
-                <div>
-                <ul>
-                <li> <p> <b>Police - 911</b></p></li>
-                <li> <p> <b>Safety Services - 905-123-4567</b></li>
-                <li> <p><b> Accident Reports - 905-234-6543</b></li>
-                </ul>
-                
-                <div class="title"><h2><u>Crime Rates (frequency)</u></h2></div>
-                <img src = "img/safety-chart.png" height="275px"> 
-                </div>    
-                <a class = "close" onclick="closeWalkscore()"></a>
-            </div>
+
+             
+            
+
 
 
 
@@ -227,190 +118,33 @@
                                     <div class="row">
                                         <div class="col-md-3 col-sm-3">
                                         
-                                        <img class="icon img-responsive" src="img/photos-icon.png" value="Show Media" onclick="showMedia(); closeReviews(); closeSafety(); closeWalkscore();">
+                                        <a href="JavaScript:showMedia();"><img class="icon img-responsive" src="img/photos-icon.png" value="Show Media" ></img></a>
                                         <h6>Media</h6>
                                         </div>
                                         <div class="col-md-3 col-sm-3">
                                        
-                                        <img class="icon img-responsive" src="img/community-icon.jpg" value="Community Rating" onclick="showReviews();  closeMedia(); closeWalkscore();closeSafety(); ">
+                                        <a href="JavaScript:showReviews();"><img class="icon img-responsive" src="img/community-icon.jpg" value="Community Rating" onclick="showReviews();  closeMedia(); closeWalkscore();closeSafety(); "></a>
                                         <h6>Community</h6>
                                         </div>
                                         <div class="col-md-3 col-sm-3">
                                        
-                                        <img class="icon img-responsive" src="img/safety.jpg" onclick="showSafety();  closeMedia(); closeReviews(); closeWalkscore();">
+                                        <a href="JavaScript:showSafety();"><img class="icon img-responsive" src="img/safety.jpg" onclick="showSafety();  closeMedia(); closeReviews(); closeWalkscore();"></a>
                                         <h6>Safety</h6>
                                         </div>
                                         <div class="col-md-3 col-sm-3">
                                       
-                                        <img class="icon img-responsive" src="img/walkscore.png" onclick="showWalkscore();  closeMedia(); closeSafety(); closeReviews();">
+                                        <a href="JavaScript:showWalkscore();"><img class="icon img-responsive" src="img/walkscore.png" onclick="showWalkscore();  closeMedia(); closeSafety(); closeReviews();"></a>
                                         <h6>Walkscore</h6>
                                         </div>
                                     </div>
 								</div>  
                             <span style="margin-left: 10px">Original Ad: </span><a>originaladlink.com/31421/421/4/213/4/31/43/25</a>
-                            <a class="btn btn-primary" id ="messageButton"href="#messageForm" >Message</a>
+                            <a class="btn btn-primary" id ="messageButton"href="#messageForm" style="float:right; margin:10px;">Message</a>
                             
                         </div>
                     </div>  
-                        <div class="listing-Card">
-							<div class="row">
-								<div class="col-md-4 col-sm-4 ">
-									<img class="img-responsive img-rounded center-block" src="img/house.jpg">
-								</div>
-								<div class="col-md-8 col-sm-8 details">
-                                    <ul>
-                                        <li>House Description</li>
-                                        <li>Location</li>
-                                        <li>Price</li>
-                                        <li>Commute Time</li>
-                                    </ul>
-                                    <div class="row">
-                                        <div class="col-md-3 col-sm-3">
-                                        
-                                        <img class="icon img-responsive" src="img/photos-icon.png" value="Show Media" onclick="showMedia(); closeReviews(); closeSafety(); closeWalkscore();"><!--onmouseover="showMedia()" onmouseout="closeMedia()"--> 
-                                        <h6>Media</h6>
-                                        </div>
-                                        <div class="col-md-3 col-sm-3">
-                                       
-                                        <img class="icon img-responsive" src="img/community-icon.jpg" value="Community Rating" onclick="showReviews();  closeMedia(); closeSafety(); closeWalkscore();"><!--onmouseover="showReviews()"onmouseout="closeReviews()"-->
-                                        <h6>Community</h6>
-                                        </div>
-                                        <div class="col-md-3 col-sm-3">
-                                       
-                                        <img class="icon img-responsive" src="img/safety.jpg" onclick="showSafety();  closeMedia(); closeReviews(); closeWalkscore();">
-                                        <h6>Safety</h6>
-                                        </div>
-                                        <div class="col-md-3 col-sm-3">
-                                      
-                                        <img class="icon img-responsive" src="img/walkscore.png" onclick="showWalkscore();  closeMedia(); closeSafety(); closeReviews();">
-                                        <h6>Walkscore</h6>
-                                        </div>
-                                    </div>
-								</div>  
-                            <span style="margin-left: 10px">Original Ad: </span><a>originaladlink.com/31421/421/4/213/4/31/43/25</a>
-                            <a class="btn btn-primary" id ="messageButton"href="#messageForm" style="float:right; margin-right:10px;">Message</a>
-                            
-                        </div>
-                    </div>    
-                        <div class="listing-Card">
-							<div class="row">
-								<div class="col-md-4 col-sm-4 ">
-									<img class="img-responsive img-rounded center-block" src="img/house.jpg">
-								</div>
-								<div class="col-md-8 col-sm-8 details">
-                                    <ul>
-                                        <li>House Description</li>
-                                        <li>Location</li>
-                                        <li>Price</li>
-                                        <li>Commute Time</li>
-                                    </ul>
-                                    <div class="row">
-                                        <div class="col-md-3 col-sm-3">
-                                        
-                                        <img class="icon img-responsive" src="img/photos-icon.png" value="Show Media" onclick="showMedia(); closeReviews(); closeSafety(); closeWalkscore();">
-                                        <h6>Media</h6>
-                                        </div>
-                                        <div class="col-md-3 col-sm-3">
-                                       
-                                        <img class="icon img-responsive" src="img/community-icon.jpg" value="Community Rating" onclick="showReviews();  closeMedia(); closeWalkscore();closeSafety(); ">
-                                        <h6>Community</h6>
-                                        </div>
-                                        <div class="col-md-3 col-sm-3">
-                                       
-                                        <img class="icon img-responsive" src="img/safety.jpg" onclick="showSafety();  closeMedia(); closeReviews(); closeWalkscore();">
-                                        <h6>Safety</h6>
-                                        </div>
-                                        <div class="col-md-3 col-sm-3">
-                                      
-                                        <img class="icon img-responsive" src="img/walkscore.png" onclick="showWalkscore();  closeMedia(); closeSafety(); closeReviews();">
-                                        <h6>Walkscore</h6>
-                                        </div>
-                                    </div>
-								</div>  
-                            <span style="margin-left: 10px">Original Ad: </span><a>originaladlink.com/31421/421/4/213/4/31/43/25</a>
-                            <a class="btn btn-primary" id ="messageButton"href="#messageForm" style="float:right; margin-right:10px;">Message</a>
-                            
-                        </div>
-                    </div>  
-                        <div class="listing-Card">
-							<div class="row">
-								<div class="col-md-4 col-sm-4 ">
-									<img class="img-responsive img-rounded center-block" src="img/house.jpg">
-								</div>
-								<div class="col-md-8 col-sm-8 details">
-                                    <ul>
-                                        <li>House Description</li>
-                                        <li>Location</li>
-                                        <li>Price</li>
-                                        <li>Commute Time</li>
-                                    </ul>
-                                    <div class="row">
-                                        <div class="col-md-3 col-sm-3">
-                                        
-                                        <img class="icon img-responsive" src="img/photos-icon.png" value="Show Media" onclick="showMedia(); closeReviews(); closeSafety(); closeWalkscore();">
-                                        <h6>Media</h6>
-                                        </div>
-                                        <div class="col-md-3 col-sm-3">
-                                       
-                                        <img class="icon img-responsive" src="img/community-icon.jpg" value="Community Rating" onclick="showReviews();  closeMedia(); closeWalkscore();closeSafety(); ">
-                                        <h6>Community</h6>
-                                        </div>
-                                        <div class="col-md-3 col-sm-3">
-                                       
-                                        <img class="icon img-responsive" src="img/safety.jpg" onclick="showSafety();  closeMedia(); closeReviews(); closeWalkscore();">
-                                        <h6>Safety</h6>
-                                        </div>
-                                        <div class="col-md-3 col-sm-3">
-                                      
-                                        <img class="icon img-responsive" src="img/walkscore.png" onclick="showWalkscore();  closeMedia(); closeSafety(); closeReviews();">
-                                        <h6>Walkscore</h6>
-                                        </div>
-                                    </div>
-								</div>  
-                            <span style="margin-left: 10px">Original Ad: </span><a>originaladlink.com/31421/421/4/213/4/31/43/25</a>
-                            <a class="btn btn-primary" id ="messageButton"href="#messageForm" style="float:right; margin-right:10px;">Message</a>
-                        </div>
-                    </div>  
-                        <div class="listing-Card">
-							<div class="row">
-								<div class="col-md-4 col-sm-4 ">
-									<img class="img-responsive img-rounded center-block" src="img/house.jpg">
-								</div>
-								<div class="col-md-8 col-sm-8 details">
-                                    <ul>
-                                        <li>House Description</li>
-                                        <li>Location</li>
-                                        <li>Price</li>
-                                        <li>Commute Time</li>
-                                    </ul>
-                                    <div class="row">
-                                        <div class="col-md-3 col-sm-3">
-                                        
-                                        <img class="icon img-responsive" src="img/photos-icon.png" value="Show Media" onclick="showMedia(); closeReviews(); closeSafety(); closeWalkscore();">
-                                        <h6>Media</h6>
-                                        </div>
-                                        <div class="col-md-3 col-sm-3">
-                                       
-                                        <img class="icon img-responsive" src="img/community-icon.jpg" value="Community Rating" onclick="showReviews();  closeMedia(); closeWalkscore();closeSafety(); ">
-                                        <h6>Community</h6>
-                                        </div>
-                                        <div class="col-md-3 col-sm-3">
-                                       
-                                        <img class="icon img-responsive" src="img/safety.jpg" onclick="showSafety();  closeMedia(); closeReviews(); closeWalkscore();">
-                                        <h6>Safety</h6>
-                                        </div>
-                                        <div class="col-md-3 col-sm-3">
-                                      
-                                        <img class="icon img-responsive" src="img/walkscore.png" onclick="showWalkscore();  closeMedia(); closeSafety(); closeReviews();">
-                                        <h6>Walkscore</h6>
-                                        </div>
-                                    </div>
-								</div>  
-                            <span style="margin-left: 10px">Original Ad: </span><a>originaladlink.com/31421/421/4/213/4/31/43/25</a>
-                            <a class="btn btn-primary" id ="messageButton"href="#messageForm" style="float:right; margin-right:10px;">Message</a>
-                          
-                        </div>
-                    </div>                      
+                        
+                                         
 			</div>
     </div>
     
@@ -447,6 +181,29 @@
                                     </form>  
                                 </div>
                                 </div>
+                                
+    <script type="text/javascript">
+        function showMedia() {
+            window.open('mediasidebar.html','media','height='+(screen.height-100)+',width=300,left='+(screen.width-300)+',top=10,resizable=no,scrollbars=no,toolbar=no,menubar=no,location=no,directories=no,status=yes')
+
+        }
+        function showReviews() {
+            window.open(
+		'ratingsidebar.html','reviews','height='+(screen.height-100)+',width=300,left='+(screen.width-300)+',top=10,resizable=no,scrollbars=no,toolbar=no,menubar=no,location=no,directories=no,status=yes')
+
+        }
+        function showSafety() {
+            window.open(
+		'safetysidebar.html','safety','height='+(screen.height-100)+',width=300,left='+(screen.width-300)+',top=10,resizable=no,scrollbars=no,toolbar=no,menubar=no,location=no,directories=no,status=yes')
+
+        }
+        function showWalkscore() {
+            window.open(
+		'walkscoresidebar.html','walkscore','height='+(screen.height-100)+',width=300,left='+(screen.width-300)+',top=10,resizable=no,scrollbars=no,toolbar=no,menubar=no,location=no,directories=no,status=yes')
+
+        }
+
+    </script>
     <!-- End of the page -->
 
   </body>

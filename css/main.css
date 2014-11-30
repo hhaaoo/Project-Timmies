@@ -213,14 +213,6 @@ border: 1px solid #AAA;
 margin-bottom:20px; 
 }
 
-#walkscoresidebar p{
-margin-top:-5px;
-margin-bottom: -5px;
-}
-
-#walkscoresidebar img{
-height:120px;
-}
 .filter, .comparator_type {
     width: 240px;
     height: 34px;
@@ -231,8 +223,8 @@ height:120px;
     display: none;
 }
 
-div ul { list-style-image: url("http://battlesiege.com/bulletin/images/Default/arrows/small_arrow.png"); color:slategray; font-size:18px; }
-div ul li { line-height:30px; }
+.listing-Card ul { list-style-image: url("http://battlesiege.com/bulletin/images/Default/arrows/small_arrow.png"); color:slategray; font-size:18px; }
+.listing-Card ul li { line-height:30px; }
 
 .row {
     display: inline-block;
