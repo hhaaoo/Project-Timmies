@@ -16,30 +16,9 @@
   </head>
   <body>
     <!-- Page Body Here -->
-
-
-
 		<div class="container">
-        
-            <!--input type="button" name="answer" value="Show Media" onclick="showDiv()" /-->
-
-
-            
-            
-            <!--input type="button" name="answer" value="Community Rating" onclick="showDiv()" /-->
-            
-
-             
-            
-
-
-
-
 			<div class="row" style="margin-top:20px;">
                 <div class="col-md-12 col-sm-12 listing-Card" id="filters">
-                            <div class="title">
-                            <h2>Filters</h2>
-                            </div>
                         <div class="filters" id="addFilter">
                           <a class="btn btn-primary" onclick="addFilter()">Add Filter</a>
                         </div>
@@ -101,11 +80,12 @@
             </div>
                                     
                     <p> Last updated: 11-19-2014 20:00:00</p> 
-                    <div class = "ads" style="overflow:scroll;">
+                    <div class = "ads" style="overflow-y:scroll; overflow-x:hidden">
                     
                         <div class="listing-Card">
 							<div class="row">
 								<div class="col-md-4 col-sm-4">
+                                    <img src="img/bookmark.png"></img>
 									<img class="img-responsive img-rounded center-block" src="img/house.jpg">
 								</div>
 								<div class="col-md-8 col-sm-8 details">
@@ -117,29 +97,90 @@
                                     </ul>
                                     <div class="row">
                                         <div class="col-md-3 col-sm-3">
-                                        
+                                        <figure>
                                         <a href="JavaScript:showMedia();"><img class="icon img-responsive" src="img/photos-icon.png" value="Show Media" ></img></a>
-                                        <h6>Media</h6>
+                                        <figcaption>Media</figcaption>
+                                        </figure>
                                         </div>
+                                        
                                         <div class="col-md-3 col-sm-3">
-                                       
+                                       <figure>
                                         <a href="JavaScript:showReviews();"><img class="icon img-responsive" src="img/community-icon.jpg" value="Community Rating" onclick="showReviews();  closeMedia(); closeWalkscore();closeSafety(); "></a>
-                                        <h6>Community</h6>
+                                        <figcaption>Community</figcaption>
+                                        </figure>
                                         </div>
+                                        
                                         <div class="col-md-3 col-sm-3">
-                                       
+                                        <figure>
                                         <a href="JavaScript:showSafety();"><img class="icon img-responsive" src="img/safety.jpg" onclick="showSafety();  closeMedia(); closeReviews(); closeWalkscore();"></a>
-                                        <h6>Safety</h6>
+                                        <figcaption>Safety</figcaption>
+                                        </figure>
                                         </div>
+                                        
                                         <div class="col-md-3 col-sm-3">
-                                      
+                                        <figure>
                                         <a href="JavaScript:showWalkscore();"><img class="icon img-responsive" src="img/walkscore.png" onclick="showWalkscore();  closeMedia(); closeSafety(); closeReviews();"></a>
-                                        <h6>Walkscore</h6>
+                                        <figcaption>Walkscore</figcaption>
+                                        </figure>
                                         </div>
                                     </div>
 								</div>  
                             <span style="margin-left: 10px">Original Ad: </span><a>originaladlink.com/31421/421/4/213/4/31/43/25</a>
+                            <div></div>
+                            <span style="margin-left: 10px">Posted:11-19-2014 19:59:59</span> <span style="margin-left: 30px"> Views: 500 </span>
                             <a class="btn btn-primary" id ="messageButton"href="#messageForm" style="float:right; margin:10px;">Message</a>
+                            
+                        </div>
+                    </div>  
+                    
+                    <div class="listing-Card">
+							<div class="row">
+								<div class="col-md-4 col-sm-4">
+                                    <img src="img/star.png"></img>
+									<img class="img-responsive img-rounded center-block" src="img/house.jpg">
+								</div>
+								<div class="col-md-8 col-sm-8 details">
+                                    <ul>
+                                        <li>House Description</li>
+                                        <li>Location</li>
+                                        <li>Price</li>
+                                        <li>Commute Time</li>
+                                    </ul>
+                                    <div class="row">
+                                        <div class="col-md-3 col-sm-3">
+                                        <figure>
+                                        <a href="JavaScript:showMedia();"><img class="icon img-responsive" src="img/photos-icon.png" value="Show Media" ></img></a>
+                                        <figcaption>Media</figcaption>
+                                        </figure>
+                                        </div>
+                                        
+                                        <div class="col-md-3 col-sm-3">
+                                       <figure>
+                                        <a href="JavaScript:showReviews();"><img class="icon img-responsive" src="img/community-icon.jpg" value="Community Rating" onclick="showReviews();  closeMedia(); closeWalkscore();closeSafety(); "></a>
+                                        <figcaption>Community</figcaption>
+                                        </figure>
+                                        </div>
+                                        
+                                        <div class="col-md-3 col-sm-3">
+                                        <figure>
+                                        <a href="JavaScript:showSafety();"><img class="icon img-responsive" src="img/safety.jpg" onclick="showSafety();  closeMedia(); closeReviews(); closeWalkscore();"></a>
+                                        <figcaption>Safety</figcaption>
+                                        </figure>
+                                        </div>
+                                        
+                                        <div class="col-md-3 col-sm-3">
+                                        <figure>
+                                        <a href="JavaScript:showWalkscore();"><img class="icon img-responsive" src="img/walkscore.png" onclick="showWalkscore();  closeMedia(); closeSafety(); closeReviews();"></a>
+                                        <figcaption>Walkscore</figcaption>
+                                        </figure>
+                                        </div>
+                                        
+                                    </div>
+								</div>  
+                            <span style="margin-left: 10px">Original Ad: </span><a>originaladlink.com/31421/421/4/213/4/31/43/25</a>
+                            <div></div>
+                            <span style="margin-left: 10px">Bookmarked:11-19-2014 19:59:59</span> <span style="margin-left: 30px"> Views: 500 </span>
+                            <a class="btn btn-primary" id ="messageButton"href="#messageForm" style="float:right;margin:10px;">Message</a>
                             
                         </div>
                     </div>  
