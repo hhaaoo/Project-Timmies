@@ -213,6 +213,21 @@ border: 1px solid #AAA;
 margin-bottom:20px; 
 }
 
+<<<<<<< HEAD
+=======
+#walkscoresidebar{
+    z-index:10;
+}
+
+#walkscoresidebar p{
+margin-top:-5px;
+margin-bottom: -5px;
+}
+
+#walkscoresidebar img{
+height:120px;
+}
+
 .filter, .comparator_type {
     width: 240px;
     height: 34px;
@@ -275,3 +290,6 @@ margin-bottom:20px;
     transform: scale(1.1);
 }
 
+.row{
+    z-index: 0;
+}
