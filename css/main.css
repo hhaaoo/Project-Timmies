@@ -289,3 +289,6 @@ margin-bottom: -5px;
 .row{
     z-index: 0;
 }
+input{
+    display: block;
+}

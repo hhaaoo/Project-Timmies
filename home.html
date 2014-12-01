@@ -55,7 +55,7 @@
                       '<option class="boolean">No</option>' +
                       '<option class="text">contains</option>' +
                       '</select>' +
-                      '<div class="col-md-12"><input  type="text" class="form-control" id="filter-',nFilters,'" placeholder="ex) Price < $1000"></div>',button,'</div><div class="form-group"></div>'].join('');
+                      '<input type="text" class="form-control" id="filter-',nFilters,'" placeholder="ex) Price < $1000"></input></div>',button].join('');
                       div.insertBefore(newGroup, null);
                     }
 
@@ -69,6 +69,7 @@
                                 }
                                 if ($(this).children("option:selected").hasClass("boolean")) {
                                     $(this).next(".comparator_type").children("option.boolean").css("display", "inline");
+                                    $(this).siblings(".form-control").css("display","none");
                                 }
                                 if ($(this).children("option:selected").hasClass("text")) {
                                     $(this).next(".comparator_type").children("option.text").css("display", "inline");
